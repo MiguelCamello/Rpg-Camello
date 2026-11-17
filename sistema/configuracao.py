@@ -8,27 +8,28 @@ import time
 
 def configuracao():
     while True:
+        limpar_terminal()
+
+        tela_config()
+
+        espacamento(30)
+        slow_print("O'que deseja configurar?")
+        espacamento(30)
+        config = normalizar_texto(input(" > "))
+
+        if config == "1":
             limpar_terminal()
 
-            tela_config()
+            c_obj.teste_de_cores()
 
-            espacamento(30)
-            slow_print("O'que deseja configurar?")
-            espacamento(30)
-            config = normalizar_texto(input(" > "))
+            print()
+            slow_print(
+                f"{c_obj.VERMELHO}Atenção!{c_obj.RESET} as cores podem ser diferentes para cada terminal e computador!")
+            input(f"{c_obj.PRETO}[Voltar] {c_obj.RESET}")
 
-            if config == "1":
-                limpar_terminal()
-
-                c_obj.teste_de_cores()
-
-                print()
-                slow_print(
-                    f"{c_obj.VERMELHO}Atenção!{c_obj.RESET} as cores podem ser diferentes para cada terminal e computador!")
-                input(f"{c_obj.PRETO}[Voltar] {c_obj.RESET}")
-
-            elif config == "2":
-                while True:
+        elif config == "2":
+            while True:
+                try:
                     limpar_terminal()
 
                     espacamento(30)
@@ -77,31 +78,35 @@ def configuracao():
                     c_obj.atualizar()
                     break
 
-            elif config == "3":
-                limpar_terminal()
+                except ValueError:
+                    color_print("Este não é um codigo valido!")
+                    time.sleep(1)
 
-                espacamento(30)
-                slow_print("Deseja restaurar as configurações ao estado original?")
+        elif config == "3":
+            limpar_terminal()
 
-                espacamento(30)
-                restaurar = normalizar_texto(input(" > "))
+            espacamento(30)
+            slow_print("Deseja restaurar as configurações ao estado original?")
 
-                if not verificar_resposta(restaurar):
-                    break
+            espacamento(30)
+            restaurar = normalizar_texto(input(" > "))
 
-                with open(CORES_JSON, "r", encoding="utf-8") as arquivo_cores:
-                    cores_json = json.load(arquivo_cores)
-            
-                    cores_json['cores'] = cores_json['cores_backup'].copy()
-            
-                with open(CORES_JSON, "w", encoding="utf-8") as arquivo_cores:
-                    json.dump(cores_json, arquivo_cores, indent=4, ensure_ascii=False)
-                    
-                espacamento(30)
-                slow_print("Configurações restauradas com sucesso!", cor=c_obj.VERDE)
-                time.sleep(1)
-
-                c_obj.atualizar()
-
-            elif config == "4":
+            if not verificar_resposta(restaurar):
                 break
+
+            with open(CORES_JSON, "r", encoding="utf-8") as arquivo_cores:
+                cores_json = json.load(arquivo_cores)
+        
+                cores_json['cores'] = cores_json['cores_backup'].copy()
+        
+            with open(CORES_JSON, "w", encoding="utf-8") as arquivo_cores:
+                json.dump(cores_json, arquivo_cores, indent=4, ensure_ascii=False)
+                
+            espacamento(30)
+            slow_print("Configurações restauradas com sucesso!", cor=c_obj.VERDE)
+            time.sleep(1)
+
+            c_obj.atualizar()
+
+        elif config == "4":
+            break

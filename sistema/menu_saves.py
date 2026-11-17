@@ -46,6 +46,12 @@ def menu_saves():
                 time.sleep(1)
 
         if acao in ["novo_save", "novo_jogo", "novo"]:
+
+            if len(obter_players()) >= 3:
+                color_print("Você já criou o maximo de saves!", cor=c_obj.DOURADO)
+                time.sleep(2)
+                continue
+
             while True:
                 slow_print("Qual será o nome do seu personagem?")
     

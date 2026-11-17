@@ -50,8 +50,7 @@ while jogo_rodando:
 
         while inimigo_obj.vivo and player_obj.vivo and jogando:  # loop combate
             
-            
-
+    
             escolhendo_acao=True
             while escolhendo_acao:
 
@@ -68,7 +67,6 @@ while jogo_rodando:
                     if sair == "sair":
                         jogando = False
                         break
-                    
 
                 elif acao in ["habilidade", "habilidades"]:  # pra erro ortografico humano
 
@@ -77,8 +75,11 @@ while jogo_rodando:
 
                     print()
 
+                    if habilidade is None:
+                        continue
+
                     if habilidade:
-                        player_obj.usar_habilidade(
+                            player_obj.usar_habilidade(
                             habilidade_req=habilidade,
                             alvo=inimigo_obj
                         )
@@ -95,10 +96,6 @@ while jogo_rodando:
                         f"{player_obj.nome}, descansou e recuperou {c_obj.AZUL}50{c_obj.RESET} de mana!")
                     time.sleep(1)
                     escolhendo_acao=False
-
-                elif acao == "exp":
-                    exp = int(input())
-                    player_obj.ganhou_exp(exp)
 
                 else:
                     color_print("Está não é uma ação valida!")
