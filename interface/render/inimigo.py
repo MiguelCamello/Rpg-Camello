@@ -13,7 +13,7 @@ def drops_dict(inimigo_obj):
     drops_list = []
 
     for nome, porcentagem in inimigo_obj.drops.items():
-        texto = f"= {nome:<20}{porcentagem:02d}% ="
+        texto = f"= {nome.capitalize():<20}{porcentagem:02d}% ="
         drops_list.append(texto)
 
     return {

@@ -61,7 +61,7 @@ def tela_inspect_hab(habilidade_req):
 
     print(f"""
 {" "*10}{linha}
-{" "*10}|{cor}{"== "+hab['nome']+" ==":^72}{c_obj.RESET}|
+{" "*10}|{cor}{"-- "+hab['nome']+" --":^72}{c_obj.RESET}|
 {" "*10}{linha}
 {" "*10}{espaco}
 {" "*10}{espaco}

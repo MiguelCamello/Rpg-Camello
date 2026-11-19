@@ -15,7 +15,7 @@ def menu_pause(player_obj):
         tela_pause()
 
         espacamento(30)
-        slow_print("O'que deseja fazer?")
+        slow_print("Oque deseja fazer?")
 
         espacamento(30)
         acao = normalizar_texto(input(" > "))
@@ -23,7 +23,7 @@ def menu_pause(player_obj):
         if acao == "continuar":
             return
 
-        if acao in ["configuracao", "configuracoes"]:
+        elif acao in ["configuracao", "configuracoes"]:
             configuracao()
 
         elif acao in ["salvar", "salva"]:
@@ -55,7 +55,7 @@ def menu_pause(player_obj):
             salvar = normalizar_texto(input(" > "))
 
             if not verificar_resposta(salvar):
-                return "sair"
+                return acao
 
             espacamento(30)
             print("salvando", end="")

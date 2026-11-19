@@ -37,6 +37,7 @@ def tela_combate(player_obj, inimigo_obj):
         atual=inimigo_obj.mana,
         maximo=inimigo_obj.mana_maxima)
 
+    Exp_inimigo = f"= {"Exp:":<18} {inimigo_obj.exp_drop:>3}  ="
     Drops_Inimigos = drops_dict(inimigo_obj)
 
     sprite = sprite_dict(inimigo_obj)
@@ -48,7 +49,7 @@ def tela_combate(player_obj, inimigo_obj):
 
     print(f"""
 {linha}
-|        {"== RPG CAMELLO ==":^76}{c_obj.VERMELHO}[Pause]{c_obj.RESET} |
+|        {"-- RPG CAMELLO --":^76}{c_obj.VERMELHO}[Pause]{c_obj.RESET} |
 {linha}
 {espaco}
 {espaco}
@@ -63,18 +64,18 @@ def tela_combate(player_obj, inimigo_obj):
 |{" "*30} {" "*4}{centralizar(sprite.get("l5", ""), 26)} {Mana_Inimigo["l2"]}|
 |{Vida_Player["l1"]} {" "*4}{centralizar(chao_cinza["l1"], 26)} {" "*30}|
 |{Vida_Player["l2"]} {" "*4}{centralizar(chao_cinza["l2"], 26)} {c_obj.PRETO} {"="*10} Drops {"="*10} {c_obj.RESET} |
-|{" "*30} {" "*30} {c_obj.PRETO}{(Drops_Inimigos.get("l2", "")):^30}{c_obj.RESET}|
-|{Mana_Player["l1"]} {" "*30} {c_obj.PRETO}{(Drops_Inimigos.get("l2", "")):^30}{c_obj.RESET}|
-|{Mana_Player["l2"]} {" "*30} {c_obj.PRETO}{(Drops_Inimigos.get("l3", "")):^30}{c_obj.RESET}|
-|{" "*30} {" "*30} {c_obj.PRETO}{(Drops_Inimigos.get("l4", "")):^30}{c_obj.RESET}|
-{espaco}
-{espaco}
-|{" "*15}|{"="*60}|{" "*15}|
-|{" "*15}|{"AÇÕES":^60}|{" "*15}|
-|{" "*15}|   {"_"*18} {"_"*16} {"_"*18}   |{" "*15}|
-|{" "*15}|  |{" "*18}|{" "*16}|{" "*18}|  |{" "*15}|
-|{" "*15}|  |{"HABILIDADES":^18}|{"ITENS":^16}|{"DESCANSAR":^18}|  |{" "*15}|
-|{" "*15}|  |{"_"*18}|{"_"*16}|{"_"*18}|  |{" "*15}|
-|{" "*15}|{" "*60}|{" "*15}|
+|{" "*30} {" "*30} {c_obj.PRETO}{Exp_inimigo:^30}{c_obj.RESET}|
+|{Mana_Player["l1"]} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l1", ""):^30}{c_obj.RESET}|
+|{Mana_Player["l2"]} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l2", ""):^30}{c_obj.RESET}|
+|{" "*30} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l3", ""):^30}{c_obj.RESET}|
+|{" "*30} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l4", ""):^30}{c_obj.RESET}|
+|{" "*10}|{"="*70}|{" "*10}|
+|{" "*10}|{" "*70}|{" "*10}|
+|{" "*10}|{c_obj.DOURADO}{"-- AÇÕES --":^70}{c_obj.RESET}|{" "*10}|
+|{" "*10}|   {c_obj.VERMELHO} __________________  {c_obj.VERDE}  __________________  {c_obj.AZUL}  __________________ {c_obj.RESET}   |{" "*10}|
+|{" "*10}|   {c_obj.VERMELHO}|                  | {c_obj.VERDE} |                  | {c_obj.AZUL} |                  |{c_obj.RESET}   |{" "*10}|
+|{" "*10}|   {c_obj.VERMELHO}|   HABILIDADES    | {c_obj.VERDE} |    INVENTARIO    | {c_obj.AZUL} |    DESCANSAR     |{c_obj.RESET}   |{" "*10}|
+|{" "*10}|   {c_obj.VERMELHO}|__________________| {c_obj.VERDE} |__________________| {c_obj.AZUL} |__________________|{c_obj.RESET}   |{" "*10}|
+|{" "*10}|{" "*70}|{" "*10}|
 {linha}
 """)

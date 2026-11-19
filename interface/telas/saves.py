@@ -100,7 +100,7 @@ def tela_saves(sqliteRow):
     
     print(f"""
 {linha}
-|{"== SAVES ==":^92}|
+|         {"-- SAVES --":^74}{c_obj.VERMELHO}[Voltar]{c_obj.RESET} |
 {linha}
 {espaco}
 | {"Save 1":^30}{"Save 2":^30}{"Save 3":^30} |""")

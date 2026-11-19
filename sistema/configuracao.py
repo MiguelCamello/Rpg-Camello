@@ -17,7 +17,10 @@ def configuracao():
         espacamento(30)
         config = normalizar_texto(input(" > "))
 
-        if config == "1":
+        if config == "voltar":
+            break
+
+        elif config == "1":
             limpar_terminal()
 
             c_obj.teste_de_cores()
@@ -107,6 +110,3 @@ def configuracao():
             time.sleep(1)
 
             c_obj.atualizar()
-
-        elif config == "4":
-            break

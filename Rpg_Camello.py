@@ -25,6 +25,9 @@ while jogo_rodando:
         
         player_obj = menu_saves()
 
+        if player_obj == "voltar":
+            continue
+
         break
 
     jogando = True
@@ -50,7 +53,6 @@ while jogo_rodando:
 
         while inimigo_obj.vivo and player_obj.vivo and jogando:  # loop combate
             
-    
             escolhendo_acao=True
             while escolhendo_acao:
 
@@ -75,7 +77,7 @@ while jogo_rodando:
 
                     print()
 
-                    if habilidade is None:
+                    if habilidade == "voltar" or not habilidade:
                         continue
 
                     if habilidade:

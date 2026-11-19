@@ -14,9 +14,14 @@ def menu_saves():
 
         tela_saves(saves)
 
+        slow_print("Oque deseja fazer?")
+
         acao = normalizar_texto(input(" > "))
 
-        if acao in ["deletar_save","deletar_jogo", "deletar"]:
+        if acao == "voltar":
+            return acao
+
+        elif acao in ["deletar_save","deletar_jogo", "deletar"]:
             slow_print("Qual deseja deletar?: Save 1, Save 2, Save 3")
             delete = normalizar_texto(input(" > "))
 
@@ -45,7 +50,7 @@ def menu_saves():
                 slow_print("Save deletado com sucesso!", cor=c_obj.VERDE)
                 time.sleep(1)
 
-        if acao in ["novo_save", "novo_jogo", "novo"]:
+        elif acao in ["novo_save", "novo_jogo", "novo"]:
 
             if len(obter_players()) >= 3:
                 color_print("Você já criou o maximo de saves!", cor=c_obj.DOURADO)
@@ -79,11 +84,12 @@ def menu_saves():
 
             return player
 
-        if acao in ["carregar_save", "carregar_jogo", "carregar"]:
+        elif acao in ["carregar_save", "carregar_jogo", "carregar"]:
             slow_print("Qual deseja carregar?: Save 1, Save 2, Save 3")
             select = normalizar_texto(input(" > "))
 
-            if select == "voltar": continue
+            if select == "voltar":
+                continue
 
             if select not in ["save_1", "save_2", "save_3"]:
                 color_print("Essa não é uma opção valida!")

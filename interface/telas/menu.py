@@ -6,25 +6,25 @@ def tela_menu():
 
     print(f"""
 {" "*30}{linha}
-{" "*30}|{"== RPG CAMELLO ==":^32}|
+{" "*30}|{"-- RPG CAMELLO --":^32}|
 {" "*30}{linha}
 {" "*30}{espaco}
-{" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{  c_obj.RESET  }{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{  c_obj.RESET  +c_obj.FUNDO_PRETO}{'Jogar':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.PRETO  }{ '_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Configuração':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Créditos':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Sair':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*8}{  c_obj.AZUL  }{'_'*16}{  c_obj.RESET  }{" "*8}|
+{" "*30}|{" "*7}{  c_obj.AZUL  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.AZUL  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.AZUL  }|{  c_obj.RESET  +c_obj.FUNDO_PRETO}{'Jogar':^16}{  c_obj.RESET  +  c_obj.AZUL  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.AZUL  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.AZUL  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*8}{  c_obj.VERDE  }{ '_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{  c_obj.VERDE  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.VERDE  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.VERDE  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Configuração':^16}{  c_obj.RESET  +  c_obj.VERDE  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.VERDE  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.VERDE  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*8}{  c_obj.DOURADO  }{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{  c_obj.DOURADO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.DOURADO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.DOURADO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Créditos':^16}{  c_obj.RESET  +  c_obj.DOURADO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.DOURADO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.DOURADO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*8}{  c_obj.VERMELHO  }{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{  c_obj.VERMELHO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.VERMELHO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.VERMELHO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Sair':^16}{  c_obj.RESET  +  c_obj.VERMELHO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*7}{  c_obj.VERMELHO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.VERMELHO  }|{" "*7}{  c_obj.RESET  }|
 {" "*30}{espaco}
 {" "*30}{espaco}
 {" "*30}{linha}
@@ -35,7 +35,7 @@ def tela_pause():
 
     print(f"""
 {" "*30}{linha}
-{" "*30}|{"== JOGO PAUSADO ==":^32}|
+{" "*30}|{"-- JOGO PAUSADO --":^32}|
 {" "*30}{linha}
 {" "*30}{espaco}
 {" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{  c_obj.RESET  }{" "*8}|
@@ -66,7 +66,7 @@ def tela_config():
 
     print(f"""
 {" "*30}{linha}
-{" "*30}|{"== CONFIGURAÇÕES ==":^32}|
+{" "*30}|  {"-- CONFIGURAÇÕES --":^20}{c_obj.VERMELHO}[Voltar]{c_obj.RESET}  |
 {" "*30}{linha}
 {" "*30}{espaco}
 {" "*30}|{'- ESQUEMA DE CORES -':^32}|
@@ -82,10 +82,10 @@ def tela_config():
 {" "*30}{espaco}
 {" "*30}{espaco}
 {" "*30}|{'[1] Teste de cores ':^32}|
-{" "*30}|{'[2] Mapear as cores':^32}|
-{" "*30}|{'[3] Restaurar padrão':^32}|
-{" "*30}|{'[4] Voltar         ':^32}|
 {" "*30}{espaco}
+{" "*30}|{'[2] Mapear as cores':^32}|
+{" "*30}{espaco}
+{" "*30}|{'[3] Restaurar padrão':^32}|
 {" "*30}{espaco}
 {" "*30}{linha}
 """)
@@ -97,7 +97,7 @@ def tela_creditos():
 
     print(f"""
 {" "*30}{linha}
-{" "*30}|{"== Creditos ==":^32}|
+{" "*30}|{"-- CREDITOS --":^20} {c_obj.VERMELHO}[Voltar]{c_obj.RESET}   |
 {" "*30}{linha}
 {" "*30}{espaco}
 {" "*30}|{"- Diretor do Projeto -":^32}|

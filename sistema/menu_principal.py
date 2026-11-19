@@ -21,7 +21,7 @@ def menu_principal():
         if acao == "jogar":
             return
 
-        if acao in ["configuracao", "configuracoes"]:
+        elif acao in ["configuracao", "configuracoes"]:
             configuracao()
 
         elif acao in ["creditos", "credito"]:

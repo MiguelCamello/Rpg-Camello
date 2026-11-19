@@ -7,6 +7,7 @@ from utils.erros import *
 def novas_habilidades(player_obj, hab_sorteadas):
     while True:
         limpar_terminal()
+        
         slow_print(f"Voce pode aprender novas habilidades! \n",cor=c_obj.VERDE)
         try:
             if hab_sorteadas:
@@ -25,4 +26,4 @@ def novas_habilidades(player_obj, hab_sorteadas):
         except HabilidadeInexistenteError:
             color_print("Está habilidade não existe!")
         except NameError:
-                    color_print("Está habilidade não é uma opção!")
+            color_print("Está habilidade não é uma opção!")

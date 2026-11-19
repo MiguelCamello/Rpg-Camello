@@ -23,8 +23,7 @@ def escolher_habilidade(player_obj):
             habilidade = normalizar_texto(input(" > "))
 
             if habilidade == "voltar":
-                escolhendo_hab = False
-                return
+                return habilidade
 
             if habilidade not in carregar_json(habilidades=True)["habilidades"]:
                 raise HabilidadeInexistenteError
@@ -41,9 +40,7 @@ def escolher_habilidade(player_obj):
             espacamento(10)
             resposta = normalizar_texto(input(" > "))
 
-            escolhendo_hab = not verificar_resposta(resposta)
-
-            if escolhendo_hab:
+            if not verificar_resposta(resposta):
                 espacamento(10)
                 color_print("Não atacou!")
                 time.sleep(1)

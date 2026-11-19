@@ -10,7 +10,7 @@ def tela_habilidades(player_obj):
 
     print(f"""
 {" "*10}{linha}
-{" "*10}| {c_obj.AZUL}{"Mana atual:":>12} {player_obj.mana:<6}{c_obj.RESET}{"== HABILIDADES ==":<18} {c_obj.PRETO}Comum {c_obj.AZUL}Raro {c_obj.ROXO}Épico {c_obj.DOURADO}Lendário {c_obj.VERMELHO}Mítico {c_obj.RESET}|
+{" "*10}| {c_obj.AZUL}{"Mana atual:":>12} {player_obj.mana:<6}{c_obj.RESET}{"-- HABILIDADES --":<18} {c_obj.PRETO}Comum {c_obj.AZUL}Raro {c_obj.ROXO}Épico {c_obj.DOURADO}Lendário {c_obj.VERMELHO}Mítico {c_obj.RESET}|
 {" "*10}{linha}
 {" "*10}{espaco}
 {" "*10}|{" "*5}{'== Nome ==':<28}{'== Efeito ==':<18}{'== Custo Mana ==':<21}|
