@@ -18,3 +18,6 @@ class EfeitoInexistenteError(Exception):
 
 class CorInexistenteError(Exception):
     pass
+
+class OpcaoNaoEncontrada(Exception):
+    pass

@@ -1,7 +1,9 @@
-from interface.formatação import limpar_terminal, espacamento, normalizar_texto, slow_print, color_print
-from interface.telas.menu import tela_creditos, tela_menu
+from interface.formatação import limpar_terminal, espacamento, normalizar_texto, slow_print
+from interface.telas.menu import tela_creditos, tela_menu_principal
 from sistema.configuracao import configuracao
 from utils.resposta import verificar_resposta
+from model.cores import cores_obj as c_obj
+import time
 import sys
 
 
@@ -10,7 +12,7 @@ def menu_principal():
     while menu_aberto:
         limpar_terminal()
 
-        tela_menu()
+        tela_menu_principal()
 
         espacamento(30)
         slow_print("O'que deseja fazer?")
@@ -41,63 +43,11 @@ def menu_principal():
             espacamento(30)
             sair = normalizar_texto(input(" > "))
 
-            if sair == "sou_dev":
+            if verificar_resposta(sair):
                 limpar_terminal()
                 sys.exit()
 
-            if not verificar_resposta(sair):
-                continue
-
-            limpar_terminal()
-
+        else:
             espacamento(30)
-            slow_print("É um jogo muuito bom e divertido!", end="\n\n")
-
-            espacamento(30)
-            slow_print(
-                "Os produtores são ótimos, da uma olhada nos creditos!", end="\n\n")
-
-            espacamento(30)
-            slow_print("Tem certeza que deseja perder essa experiência???")
-
-            espacamento(30)
-            sair = normalizar_texto(input(" > "))
-
-            if not verificar_resposta(sair):
-                continue
-
-            limpar_terminal()
-
-            espacamento(30)
-            slow_print(
-                "É um joginho de turno em python, estilo pokemon", end="\n\n")
-
-            espacamento(30)
-            slow_print(
-                "Temos UIs bem feitas e pensadas pelo nosso dev Front-end", end="\n\n")
-
-            espacamento(30)
-            slow_print(
-                "Temos lutas e combate otimos desenvolvido pelo nosso dev Back-end", end="\n\n")
-
-            espacamento(30)
-            slow_print(
-                "Seu progresso fica salvo graças ao nosso dev Database", end="\n\n")
-
-            espacamento(30)
-            slow_print(
-                "Tudo isso foi testado pelo nosso Tester especial para melhor experiência do usuario!", end="\n\n")
-
-            espacamento(30)
-            slow_print("Deseja mesmo sair dessa obra prima?")
-
-            espacamento(30)
-            sair = normalizar_texto(input(" > "))
-
-            if not verificar_resposta(sair):
-                continue
-            else:
-                limpar_terminal()
-                espacamento(30)
-                slow_print("Ok ):", delay=0.5)
-                sys.exit()
+            slow_print("Está não é uma opção valida!", cor=c_obj.DOURADO)
+            time.sleep(1)

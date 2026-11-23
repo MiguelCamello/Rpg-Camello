@@ -36,7 +36,7 @@ def espacamento(espaco):
     print(" "*espaco, end="")
 
 
-def slow_print(texto, delay=0.05, cor="\033[0m", end="\n"):
+def slow_print(texto, delay=0.03, cor="\033[0m", end="\n"):
     print(cor, end="")
 
     for i, letra in enumerate(texto):
@@ -47,10 +47,6 @@ def slow_print(texto, delay=0.05, cor="\033[0m", end="\n"):
 
     print("\033[0m", end=end)
 
-
-def color_print(texto, cor="\033[91m"):
-    print(cor+texto+"\033[0m")
-    
 
 def normalizar_texto(texto):
     texto = texto.lower().strip()

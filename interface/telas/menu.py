@@ -1,7 +1,7 @@
 from model.cores import cores_obj as c_obj
 
 
-def tela_menu():
+def tela_menu_principal():
     linha, espaco = f"|{"="*32}|", f"|{" "*32}|"
 
     print(f"""
@@ -9,26 +9,27 @@ def tela_menu():
 {" "*30}|{"-- RPG CAMELLO --":^32}|
 {" "*30}{linha}
 {" "*30}{espaco}
-{" "*30}|{" "*8}{  c_obj.AZUL  }{'_'*16}{  c_obj.RESET  }{" "*8}|
-{" "*30}|{" "*7}{  c_obj.AZUL  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.AZUL  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.AZUL  }|{  c_obj.RESET  +c_obj.FUNDO_PRETO}{'Jogar':^16}{  c_obj.RESET  +  c_obj.AZUL  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.AZUL  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.AZUL  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.VERDE  }{ '_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.VERDE  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.VERDE  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.VERDE  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Configuração':^16}{  c_obj.RESET  +  c_obj.VERDE  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.VERDE  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.VERDE  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.DOURADO  }{'_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.DOURADO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.DOURADO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.DOURADO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Créditos':^16}{  c_obj.RESET  +  c_obj.DOURADO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.DOURADO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.DOURADO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.VERMELHO  }{'_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.VERMELHO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.VERMELHO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.VERMELHO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Sair':^16}{  c_obj.RESET  +  c_obj.VERMELHO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.VERMELHO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.VERMELHO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*8}{c_obj.AZUL}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.AZUL}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.AZUL}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.AZUL}|{c_obj.RESET + c_obj.FUNDO_PRETO}{'Jogar':^16}{c_obj.RESET + c_obj.AZUL}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.AZUL}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.AZUL}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*8}{c_obj.VERDE}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.VERDE}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.VERDE}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.VERDE}|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Configuração':^16}{c_obj.RESET + c_obj.VERDE}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.VERDE}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.VERDE}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*8}{c_obj.DOURADO}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.DOURADO}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.DOURADO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.DOURADO}|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Créditos':^16}{c_obj.RESET + c_obj.DOURADO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.DOURADO}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.DOURADO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*8}{c_obj.VERMELHO}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.VERMELHO}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.VERMELHO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.VERMELHO}|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Sair':^16}{c_obj.RESET + c_obj.VERMELHO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.VERMELHO}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.VERMELHO}|{" "*7}{c_obj.RESET}|
 {" "*30}{espaco}
 {" "*30}{espaco}
 {" "*30}{linha}
 """)
+
 
 def tela_pause():
     linha, espaco = f"|{"="*32}|", f"|{" "*32}|"
@@ -38,29 +39,29 @@ def tela_pause():
 {" "*30}|{"-- JOGO PAUSADO --":^32}|
 {" "*30}{linha}
 {" "*30}{espaco}
-{" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{  c_obj.RESET  }{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{  c_obj.RESET  +c_obj.FUNDO_PRETO}{'Continuar':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.PRETO  }{ '_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Configuração':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Salvar':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*8}{  c_obj.PRETO  }{'_'*16}{c_obj.RESET}{" "*8}|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Sair':^16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
-{" "*30}|{" "*7}{  c_obj.PRETO  }|{c_obj.FUNDO_PRETO}{'_'*16}{  c_obj.RESET  +  c_obj.PRETO  }|{" "*7}{  c_obj.RESET  }|
+{" "*30}|{" "*8}{c_obj.PRETO}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.RESET + c_obj.FUNDO_PRETO}{'Continuar':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*8}{c_obj.PRETO}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Configuração':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*8}{c_obj.PRETO}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Salvar':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*8}{c_obj.PRETO}{'_'*16}{c_obj.RESET}{" "*8}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.RESET+c_obj.FUNDO_PRETO}{'Sair':^16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
+{" "*30}|{" "*7}{c_obj.PRETO}|{c_obj.FUNDO_PRETO}{'_'*16}{c_obj.RESET + c_obj.PRETO}|{" "*7}{c_obj.RESET}|
 {" "*30}{espaco}
 {" "*30}{espaco}
 {" "*30}{linha}
 """)
 
 
-def tela_config():
+def tela_configuracoes():
     cores_dict = c_obj.getAll_codigos()
     linha, espaco = f"|{"="*32}|", f"|{" "*32}|"
 

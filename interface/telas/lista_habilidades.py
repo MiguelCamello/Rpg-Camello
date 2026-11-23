@@ -3,7 +3,7 @@ from interface.formatação import centralizar
 from model.cores import cores_obj as c_obj
 
 
-def tela_habilidades(player_obj):
+def tela_lista_habilidades(player_obj):
     hab_dict = habilidades_list(player_obj)
 
     linha, espaco = f"|{"="*72}|", f"|{" "*72}|"

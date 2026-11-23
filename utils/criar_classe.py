@@ -4,17 +4,22 @@ from model.player import Player
 
 
 def criar_inimigo(nome):
-    dados = carregar_json(inimigo=True, habilidades=True, sprites=True)
+    dados = carregar_json(inimigo=True, habilidades=True, sprites=True, efeitos=True)
     return Inimigo(
         inimigo_json=dados["inimigos"][nome],
         habilidades_json=dados["habilidades"],
-        sprites_json=dados["sprites"]
+        sprites_json=dados["sprites"],
+        efeitos_json=dados["efeitos"],
         )
 
 def criar_player(nome, **resto):
-    dados = carregar_json(habilidades=True)["habilidades"]
-    return Player(
-        nome=nome,
-        habilidades_json=dados,
-        **resto
-    )  # função perigossisima, pode retornar erro se eu fizer merda
+    dados = carregar_json(habilidades=True, efeitos=True)
+    try:
+        return Player(
+            nome=nome,
+            efeitos_json=dados["efeitos"],
+            habilidades_json=dados["habilidades"],
+            **resto
+        )
+    except:
+        print("Deu erro ai!")

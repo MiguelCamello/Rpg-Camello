@@ -53,7 +53,7 @@
         }
     },
     "orc": {
-        "sprite": "fantasma",
+        "sprite": "orc",
         "nome": "Orc",
         "dificuldade": "Difícil",
         "mana": 75,
@@ -126,7 +126,7 @@
         }
     },
     "mago_sombrio": {
-        "sprite": "monstro",
+        "sprite": "monstro_feliz",
         "nome": "Mago sombrio",
         "dificuldade": "Difícil",
         "mana": 130,
@@ -197,6 +197,153 @@
             "escama_de_dragao": 50,
             "presa_de_dragao": 30,
             "coracao_de_dragao": 5
+        }
+    },
+    "slime": {
+        "sprite": "slime",
+        "nome": "Slime",
+        "dificuldade": "Muito fácil",
+        "mana": 30,
+        "defesa": 8,
+        "vida": 75,
+        "habilidades_possiveis": [
+            "soco_fraco",
+            "soco_medio"
+        ],
+        "exp_drop": 35,
+        "drops": {
+            "gelatina": 60,
+            "nucleo_de_slime": 10
+        }
+    },
+    "aranha_gigante": {
+        "sprite": "aranha",
+        "nome": "Aranha gigante",
+        "dificuldade": "Fácil",
+        "mana": 55,
+        "defesa": 3,
+        "vida": 80,
+        "habilidades_possiveis": [
+            "mordida",
+            "ataque_rapido",
+            "golpe_podre"
+        ],
+        "exp_drop": 55,
+        "drops": {
+            "seda_de_aranha": 45,
+            "veneno_de_aranha": 20
+        }
+    },
+    "fantasma": {
+        "sprite": "fantasma",
+        "nome": "Fantasma",
+        "dificuldade": "Médio",
+        "mana": 100,
+        "defesa": 0,
+        "vida": 105,
+        "habilidades_possiveis": [
+            "bola_sombria",
+            "lamina_fantasma",
+            "golpe_vampirico"
+        ],
+        "exp_drop": 95,
+        "drops": {
+            "ectoplasma": 50,
+            "essencia_sombria": 15
+        }
+    },
+    "troll": {
+        "sprite": "orc",
+        "nome": "Troll",
+        "dificuldade": "Difícil",
+        "mana": 65,
+        "defesa": 20,
+        "vida": 230,
+        "habilidades_possiveis": [
+            "soco_pesado",
+            "golpe_brutal",
+            "pele_de_ferro"
+        ],
+        "exp_drop": 175,
+        "drops": {
+            "pele_de_troll": 40,
+            "dente_de_troll": 25,
+            "pedra_de_regeneracao": 5
+        }
+    },
+    "elemental_de_fogo": {
+        "sprite": "dragao",
+        "nome": "Elemental de fogo",
+        "dificuldade": "Muito difícil",
+        "mana": 160,
+        "defesa": 8,
+        "vida": 200,
+        "habilidades_possiveis": [
+            "impacto_ardente",
+            "sopro_de_fogo",
+            "furia_elemental"
+        ],
+        "exp_drop": 260,
+        "drops": {
+            "nucleo_de_fogo": 35,
+            "essencia_elemental": 15
+        }
+    },
+    "lich": {
+        "sprite": "esqueleto",
+        "nome": "Lich",
+        "dificuldade": "Muito difícil",
+        "mana": 200,
+        "defesa": 12,
+        "vida": 175,
+        "habilidades_possiveis": [
+            "bola_sombria",
+            "golpe_vampirico",
+            "regeneracao_arcana"
+        ],
+        "exp_drop": 300,
+        "drops": {
+            "cajado_de_lich": 10,
+            "cristal_sombrio": 35,
+            "fragmento_de_alma": 5
+        }
+    },
+    "rei_dos_mortos": {
+        "sprite": "esqueleto",
+        "nome": "Rei dos mortos",
+        "dificuldade": "Chefe",
+        "mana": 180,
+        "defesa": 30,
+        "vida": 420,
+        "habilidades_possiveis": [
+            "soco_pesado",
+            "golpe_quebra_armadura",
+            "terremoto"
+        ],
+        "exp_drop": 500,
+        "drops": {
+            "coroa_dos_mortos": 10,
+            "espada_dos_mortos": 15,
+            "osso": 100
+        }
+    },
+    "dragao_ancestral": {
+        "sprite": "dragao",
+        "nome": "Dragão ancestral",
+        "dificuldade": "Chefe",
+        "mana": 250,
+        "defesa": 35,
+        "vida": 650,
+        "habilidades_possiveis": [
+            "sopro_de_fogo",
+            "lanca_draconica",
+            "furia_elemental"
+        ],
+        "exp_drop": 800,
+        "drops": {
+            "escama_de_dragao": 80,
+            "presa_de_dragao": 60,
+            "coracao_de_dragao": 10
         }
     }
 }

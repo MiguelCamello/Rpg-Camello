@@ -69,7 +69,7 @@ def salvar_player(player_obj):
                 mana=player_obj.mana,
                 vida_m=player_obj.vida_maxima,
                 vida=player_obj.vida,
-                defesa=player_obj.defesa,
+                defesa_base=player_obj.defesa_base,
                 conn=conn
             )
             for est in player_obj.estados:
@@ -108,7 +108,7 @@ def carregar_player(player_id):
                 mana=player_dados["mana"],
                 vida_maxima=player_dados["vida_maxima"],
                 vida=player_dados["vida"],
-                defesa=player_dados["defesa"],
+                defesa_base=player_dados["defesa_base"],
                 itens=itens,
                 habilidades=habilidades
             )
@@ -126,7 +126,7 @@ def atualizar_player(player_id, player_obj):
                 mana=player_obj.mana,
                 vida_m=player_obj.vida_maxima,
                 vida=player_obj.vida,
-                defesa=player_obj.defesa,
+                defesa_base=player_obj.defesa_base,
                 conn=conn
             )
 

@@ -1,4 +1,4 @@
-from interface.formatação import limpar_terminal, espacamento, normalizar_texto, slow_print, color_print
+from interface.formatação import limpar_terminal, espacamento, normalizar_texto, slow_print
 from interface.telas.menu import tela_pause
 from sistema.configuracao import configuracao
 from utils.resposta import verificar_resposta
@@ -39,7 +39,7 @@ def menu_pause(player_obj):
             atualizar_player(player_id=player_obj.id, player_obj=player_obj)
 
             espacamento(30)
-            color_print(f"Dados de {player_obj.nome} foram salvos com sucesso!", cor=c_obj.VERDE)
+            slow_print(f"Dados de {player_obj.nome} foram salvos com sucesso!", cor=c_obj.VERDE)
 
             time.sleep(2)
 
@@ -64,6 +64,12 @@ def menu_pause(player_obj):
             atualizar_player(player_id=player_obj.id, player_obj=player_obj)
 
             espacamento(30)
-            color_print(f"Dados de {player_obj.nome} foram salvos com sucesso!", cor=c_obj.VERDE)
+            slow_print(f"Dados de {player_obj.nome} foram salvos com sucesso!", cor=c_obj.VERDE)
 
             time.sleep(2)
+
+            return acao
+
+        else:
+            slow_print("Está não é uma opção valida!", cor=c_obj.DOURADO)
+            time.sleep(1)

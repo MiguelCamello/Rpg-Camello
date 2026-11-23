@@ -18,11 +18,21 @@ def barra_exp(maximo=1, atual=1, nivel=1):
     return linhas
 
 
-def barra_vida(maximo=1, atual=1, defesa=10):
-    vida = str(atual)+"/"+str(maximo)
+def barra_vida(vd_maxima=1, vd_atual=1, df_base=10, defesa=10):
+    vida = str(vd_atual)+"/"+str(vd_maxima)
+    df_extra = defesa - df_base
+    if df_extra == 0:
+        df_extra = ""
+    elif df_extra > 0:
+        df_extra = f"+{defesa - df_base}"
+    elif df_extra < 0:
+        df_extra = f"-{abs(defesa - df_base)}"
+
     linhas = {
-        "l1": f"  {c_obj.VERMELHO}{"Vida"}{vida:>14}{c_obj.DOURADO} {"Def"} {defesa:<5}{c_obj.RESET}",
-        "l2": f" {barra(maximo, atual, 19, cor=c_obj.VERMELHO)+barra(tamanho=7, cor=c_obj.DOURADO)}   "}
+        "l1": f"  {c_obj.VERMELHO}{"Vida"}{vida:>14}{c_obj.DOURADO} {"Def"} {df_base:<5}{c_obj.RESET}",
+        "l2": f" {barra(vd_maxima, vd_atual, 19, cor=c_obj.VERMELHO)+barra(tamanho=7, cor=c_obj.DOURADO)}   ",
+        "l3": f" {" "*22}{c_obj.DOURADO}{df_extra:^5}  {c_obj.RESET}"}
+    
     return linhas
 
 

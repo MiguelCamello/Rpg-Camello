@@ -1,6 +1,6 @@
-from interface.formatação import limpar_terminal, espacamento, normalizar_texto, slow_print, color_print
-from interface.telas.habilidades import tela_habilidades
-from interface.telas.inspect_hab import tela_inspect_hab
+from interface.formatação import limpar_terminal, espacamento, normalizar_texto, slow_print
+from interface.telas.lista_habilidades import tela_lista_habilidades
+from interface.telas.inspect_habilidade import tela_inspect_habilidade
 from model.cores import cores_obj as c_obj
 
 from utils.resposta import verificar_resposta
@@ -8,13 +8,14 @@ from utils.carregar_json import carregar_json
 from utils.erros import *
 import time
 
+
 def escolher_habilidade(player_obj):
 
-    escolhendo_hab=True
+    escolhendo_hab = True
     while escolhendo_hab:  # escolha de habilidade para se usar
         try:
             limpar_terminal()
-            tela_habilidades(player_obj)
+            tela_lista_habilidades(player_obj)
 
             espacamento(10)  # pra centralizar
             slow_print("Que habilidade deseja usar?")
@@ -30,9 +31,10 @@ def escolher_habilidade(player_obj):
 
             if habilidade not in player_obj.habilidades:
                 raise HabilidadeNaoAdquiridaError
+            
 
             limpar_terminal()
-            tela_inspect_hab(habilidade)
+            tela_inspect_habilidade(habilidade)
 
             espacamento(10)
             slow_print("Deseja usar está habilidade?")
@@ -42,23 +44,21 @@ def escolher_habilidade(player_obj):
 
             if not verificar_resposta(resposta):
                 espacamento(10)
-                color_print("Não atacou!")
+                slow_print(f"Habilidade - {habilidade.capitalize()} - não usada!", cor=c_obj.DOURADO)
                 time.sleep(1)
-                return
+                continue
 
             return habilidade
 
         except ManaInsuficienteError:
             espacamento(10)
-            color_print(
-                f"Mana insuficiente para usar a habilidade {habilidade}!", cor=c_obj.DOURADO)
+            slow_print(f"Mana insuficiente para usar a habilidade - {habilidade} - !", cor=c_obj.DOURADO)
             time.sleep(2)
         except HabilidadeNaoAdquiridaError:
             espacamento(10)
-            color_print(
-                f"Habilidade {habilidade} não foi adquirida!", cor=c_obj.DOURADO)
+            slow_print(f"Você não possui a habilidade - {habilidade} - !", cor=c_obj.DOURADO)
             time.sleep(2)
         except HabilidadeInexistenteError:
             espacamento(10)
-            color_print(f"{habilidade} não é uma habilidade valida!")
+            slow_print(f"\"{habilidade}\" não é uma habilidade valida!", cor=c_obj.DOURADO)
             time.sleep(2)

@@ -14,14 +14,14 @@ CREATE TABLE IF NOT EXISTS players(
     mana INTEGER NOT NULL,
     vida_maxima INTEGER NOT NULL,
     vida INTEGER NOT NULL,
-    defesa INTEGER NOT NULL
+    defesa_base INTEGER NOT NULL
 )
 """)
 
 
 def get_all(conn=None):
     with usar_conexao(conn) as conn:
-        return conn.execute("SELECT * FROM players").fetchall()
+        return conn.execute("SELECT * FROM players ORDER BY id").fetchall()
 
 
 def get(id, conn=None):
@@ -29,7 +29,7 @@ def get(id, conn=None):
         return conn.execute("SELECT * FROM players WHERE id = ?", (id,)).fetchone()
 
 
-def create(nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=None):
+def create(nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa_base, conn=None):
     with usar_conexao(conn) as conn:
         cursor = conn.execute("""
             INSERT INTO players (
@@ -41,21 +41,20 @@ def create(nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=Non
                 mana,
                 vida_maxima,
                 vida,
-                defesa                    
+                defesa_base                    
             )
             VALUES (?,?,?,?,?,?,?,?,?)
-        """, (nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa))
+        """, (nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa_base))
         return cursor.lastrowid
 
 
-def update(id, nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=None):
+def update(id, nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa_base, conn=None):
     with usar_conexao(conn) as conn:
         conn.execute("""
             UPDATE players
-            SET nome = ?, nivel = ?, exp_necessario = ?,          
-            exp, mana_maxima = ?, mana = ?, vida_maxima = ?, vida = ?, defesa = ?
+            SET nome = ?, nivel = ?, exp_necessario = ?, exp = ?, mana_maxima = ?, mana = ?, vida_maxima = ?, vida = ?, defesa_base = ?
             WHERE id = ?
-        """, (nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, id))
+        """, (nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa_base, id))
 
 
 def delete(id, conn=None):

@@ -26,7 +26,7 @@
     "nome": "Envenenado",
     "tipo": "dano_continuo",
     "duracao_turnos": 3,
-    "dano_por_turno": 5,
+    "dano_por_turno": -5,
     "descricao": "A entidade perde vida ao longo dos turnos."
   },
   "queimando": {
@@ -34,7 +34,7 @@
     "nome": "Queimando",
     "tipo": "dano_continuo",
     "duracao_turnos": 3,
-    "dano_por_turno": 8,
+    "dano_por_turno": -8,
     "descricao": "A entidade sofre dano de fogo ao longo dos turnos."
   },
   "regeneracao": {
@@ -53,6 +53,14 @@
     "modificador_dano": -25,
     "descricao": "A entidade causa menos dano."
   },
+  "exposto": {
+    "cor": "\u001b[30m",
+    "nome": "Exposto",
+    "tipo": "debuff",
+    "duracao_turnos": 2,
+    "defesa_por_turno": -20,
+    "descricao": "A entidade perde defesa temporariamente."
+  },
   "fortalecido": {
     "cor": "\u001b[33m",
     "nome": "Fortalecido",
@@ -67,6 +75,6 @@
     "tipo": "buff",
     "duracao_turnos": 2,
     "defesa_por_turno": 20,
-    "descricao": "O usuario ganha um escudo temporário."
+    "descricao": "A entidade ganha um escudo temporário."
   }
 }

@@ -20,18 +20,15 @@ def formatar_estados(estados_lista):
 def formatar_raridade(dicionario):
     raridade = dicionario["raridade"]
 
-    if raridade == "comum":
-        cor = c_obj.PRETO
-    elif raridade == "raro":
-        cor = c_obj.AZUL
-    elif raridade == "epico":
-        cor = c_obj.ROXO
-    elif raridade == "lendario":
-        cor = c_obj.DOURADO
-    elif raridade == "mitico":
-        cor = c_obj.VERMELHO
+    raridade_cor = {
+        "comum": c_obj.PRETO,
+        "raro": c_obj.AZUL,
+        "epico": c_obj.ROXO,
+        "lendario": c_obj.DOURADO,
+        "mitico": c_obj.VERMELHO
+    }
 
-    return cor
+    return raridade_cor[raridade]
 
 
 def habilidades_list(player_obj):

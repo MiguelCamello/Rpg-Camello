@@ -3,7 +3,7 @@ from model.cores import cores_obj as c_obj
 from interface.formatação import centralizar
 
 
-def card_render(save):
+def card_save_render(save): # renderiza as info do card
     exp = str(save['exp'])+"/"+str(save['exp_necessario'])
     vida = str(save['vida'])+"/"+str(save['vida_maxima'])
     mana = str(save['mana'])+"/"+str(save['mana_maxima'])
@@ -16,14 +16,14 @@ def card_render(save):
         centralizar(f"{c_obj.VERDE}{"|____|":<21}{c_obj.RESET}", 24),
 
         #vida
-        centralizar(f" {c_obj.VERMELHO}{"Vida"}{vida:>10}{c_obj.DOURADO} {"Def"} {save['defesa']}{c_obj.RESET}", 24),
-        centralizar(f"{barra(save['vida_maxima'], save['vida'], 15, cor=c_obj.VERMELHO)+barra(tamanho=6, cor=c_obj.DOURADO)}", 24),
+        centralizar(f" {c_obj.VERMELHO}{"Vida"}{vida:>10}{c_obj.DOURADO} {"Def"} {save['defesa_base']}{c_obj.RESET}", 24),
+        centralizar(f"{barra(save['vida_maxima'], save['vida'], 15, cor=c_obj.VERMELHO)+barra(tamanho=7, cor=c_obj.DOURADO)}", 24),
 
         #mana
         centralizar(f"{barra(save['mana_maxima'], save['mana'], 18, cor=c_obj.AZUL)}", 24),
         centralizar(f" {c_obj.AZUL}{"Mana"}   {mana:>10}{c_obj.RESET}", 24)
     ]
-def card_vazio():
+def card_vazio(): # card vazio
     espaco, linha = " "*24, "_"*24
     mais = [
         f"{"     █     ":^24}",
@@ -55,10 +55,10 @@ def card_vazio():
 
     return card
 
-def card_save(save):
+def card_save(save): # card com as info do render
     nome = centralizar(f"{c_obj.DOURADO}{("--== " + save['nome'] + " ==--"):^24}{c_obj.RESET}",24)
     espaco, linha = " "*24, "_"*24
-    linhas = card_render(save)
+    linhas = card_save_render(save)
 
     return [
         f"{linha:^30}",
@@ -83,10 +83,9 @@ def card_save(save):
     ]
 
 
-def tela_saves(sqliteRow):
+def tela_saves(sqliteRow): # tela com os card
     linha, espaco = f"|{"="*92}|", f"|{" "*92}|"
     
-
     card1 = card_vazio()
     card2 = card_vazio()
     card3 = card_vazio()

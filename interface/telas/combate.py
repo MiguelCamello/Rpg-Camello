@@ -19,8 +19,9 @@ def tela_combate(player_obj, inimigo_obj):
         nivel=player_obj.nivel)
 
     Vida_Player = barra_vida(
-        atual=player_obj.vida,
-        maximo=player_obj.vida_maxima,
+        vd_atual=player_obj.vida,
+        vd_maxima=player_obj.vida_maxima,
+        df_base=player_obj.defesa_base,
         defesa=player_obj.defesa)
 
     Mana_Player = barra_mana(
@@ -29,8 +30,9 @@ def tela_combate(player_obj, inimigo_obj):
 
     # inimigo barra
     Vida_Inimigo = barra_vida(
-        atual=inimigo_obj.vida,
-        maximo=inimigo_obj.vida_maxima,
+        vd_atual=inimigo_obj.vida,
+        vd_maxima=inimigo_obj.vida_maxima,
+        df_base=inimigo_obj.defesa_base,
         defesa=inimigo_obj.defesa)
 
     Mana_Inimigo = barra_mana(
@@ -59,12 +61,12 @@ def tela_combate(player_obj, inimigo_obj):
 {espaco}
 |{Exp_Player["l1"]} {" "*4}{centralizar(sprite.get("l1", ""), 26)} {Vida_Inimigo["l1"]}|
 |{Exp_Player["l2"]} {" "*4}{centralizar(sprite.get("l2", ""), 26)} {Vida_Inimigo["l2"]}|
-|{Exp_Player["l3"]} {" "*4}{centralizar(sprite.get("l3", ""), 26)} {" "*30}|
+|{Exp_Player["l3"]} {" "*4}{centralizar(sprite.get("l3", ""), 26)} {Vida_Inimigo["l3"]}|
 |{Exp_Player["l4"]} {" "*4}{centralizar(sprite.get("l4", ""), 26)} {Mana_Inimigo["l1"]}|
 |{" "*30} {" "*4}{centralizar(sprite.get("l5", ""), 26)} {Mana_Inimigo["l2"]}|
 |{Vida_Player["l1"]} {" "*4}{centralizar(chao_cinza["l1"], 26)} {" "*30}|
 |{Vida_Player["l2"]} {" "*4}{centralizar(chao_cinza["l2"], 26)} {c_obj.PRETO} {"="*10} Drops {"="*10} {c_obj.RESET} |
-|{" "*30} {" "*30} {c_obj.PRETO}{Exp_inimigo:^30}{c_obj.RESET}|
+|{Vida_Player["l3"]} {" "*30} {c_obj.PRETO}{Exp_inimigo:^30}{c_obj.RESET}|
 |{Mana_Player["l1"]} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l1", ""):^30}{c_obj.RESET}|
 |{Mana_Player["l2"]} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l2", ""):^30}{c_obj.RESET}|
 |{" "*30} {" "*30} {c_obj.PRETO}{Drops_Inimigos.get("l3", ""):^30}{c_obj.RESET}|
