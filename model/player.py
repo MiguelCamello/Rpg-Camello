@@ -156,12 +156,23 @@ class Player:
     # level up
 
     def calculo_habilidades(self):
-        NIVEIS_HABILIDADES = [
-            2, 4, 6, 9, 12, 16, 20
-        ]
-        if self.nivel in NIVEIS_HABILIDADES or self.nivel % 20 == 0:
-            hab_sorteadas = sortear_habilidades(self, self.habilidades_json)
+        NIVEIS_HABILIDADES = [2, 4, 6, 9, 12, 16, 20]
+
+        if self.nivel == self.proximo_nivel_hab:
+            hab_sorteadas = sortear_habilidades(
+                self, self.habilidades_json
+            )
             nova_habilidade(self, hab_sorteadas)
+
+            proximos = [
+                valor for valor in NIVEIS_HABILIDADES
+                if valor > self.nivel
+            ]
+
+            proximo_multiplo = (self.nivel // 20 + 1) * 20
+            proximos.append(proximo_multiplo)
+
+            self.proximo_nivel_hab = min(proximos)
 
     def calculo_lvlUp(self):
         nivel = self.nivel - 1
@@ -177,6 +188,8 @@ class Player:
         self.vida = self.vida_maxima
         self.mana = self.mana_maxima
 
+        self.calculo_habilidades()
+
     def ganhou_exp(self, exp):
         if exp <= 0:
             print("Esse valor de exp é invalido!")
@@ -186,6 +199,7 @@ class Player:
         while self.exp >= self.exp_necessario:
             self.exp -= self.exp_necessario
             self.nivel += 1
+            self.mensagens.append(f"{c_obj.VERDE}{self.nome} subiu de nivel!")
             self.calculo_lvlUp()
 
     # itens

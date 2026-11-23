@@ -82,8 +82,6 @@ while True: # loop principal, roda o jogo
 
                         input("[continuar]")
 
-                        player_obj.calculo_habilidades()
-
                     elif acao in ["item", "items", "iten", "itens"]:  # pra erro ortografico humano
                         print("futuras atualizações")
                         time.sleep(1)

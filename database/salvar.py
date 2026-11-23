@@ -109,6 +109,7 @@ def carregar_player(player_id):
                 vida_maxima=player_dados["vida_maxima"],
                 vida=player_dados["vida"],
                 defesa_base=player_dados["defesa_base"],
+                defesa=player_dados["defesa_base"],
                 itens=itens,
                 habilidades=habilidades
             )
