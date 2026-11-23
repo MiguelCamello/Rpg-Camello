@@ -62,6 +62,8 @@ class Player:
         else:
             self.habilidades = [hab.lower() for hab in habilidades]
 
+        self.proximo_nivel_hab = 2
+
         self.mensagens = []
 
     # vivo morto descanso
@@ -72,7 +74,7 @@ class Player:
 
     def morrer(self, atacante):
         self.mensagens.append(
-            f"{c_obj.VERMELHO}Você morreu para - {atacante} -{c_obj.RESET}")
+            f"{c_obj.VERMELHO}Você morreu para - {atacante.nome} -{c_obj.RESET}")
         time.sleep(1)
         # vou fazer penalidade
 
@@ -188,7 +190,6 @@ class Player:
         self.vida = self.vida_maxima
         self.mana = self.mana_maxima
 
-        self.calculo_habilidades()
 
     def ganhou_exp(self, exp):
         if exp <= 0:

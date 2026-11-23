@@ -45,24 +45,9 @@ class Cores:
 
         print()
         espacamento(30)
-        print(f"{"== Estilos ==":^21}")
-        for codigo in dados['estilos_backup'].values():
-            espacamento(30)
-            print(f"\033[{codigo}m■ {codigo:<3} - |== Teste ==|{self.RESET}")
-
-        print()
-        espacamento(30)
         print(f"{"== Texto ==":^21}")
         for codigo in dados['cores_backup'].values():
             espacamento(30)
             print(f"\033[{codigo}m■ {codigo:<3} - |== Teste ==|{self.RESET}")
-
-        print()
-        espacamento(30)
-        print(f"{"== Fundos ==":^21}")
-        for codigo in dados['fundos_backup'].values():
-            espacamento(30)
-            print(f"\033[{codigo}m■ {codigo:<3} - |== Teste ==|{self.RESET}")
-
 
 cores_obj = Cores()

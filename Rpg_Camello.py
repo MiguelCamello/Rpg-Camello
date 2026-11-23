@@ -78,6 +78,8 @@ while True: # loop principal, roda o jogo
 
                         mostrar_mensagens(player_obj, inimigo_obj)
 
+                        player_obj.calculo_habilidades()
+
                         escolhendo_acao = False
 
                         input("[continuar]")
@@ -113,6 +115,14 @@ while True: # loop principal, roda o jogo
 
                 input("[continuar]")
 
+            if not inimigo_obj.vivo:
+                continue
+
+
+            if not player_obj.vivo:
+                jogando = False
+                continue
+
             if inimigo_obj.modificadores["perdeu_vez"]:
                 espacamento(10)
                 slow_print(f"Por cause de um estado, - {inimigo_obj.nome} - perdeu a vez!")
@@ -120,12 +130,6 @@ while True: # loop principal, roda o jogo
             if player_obj.modificadores["perdeu_vez"]:
                 espacamento(10)
                 slow_print(f"Por cause de um estado, - {player_obj.nome} - perdeu a vez!")
-
-            if not player_obj.vivo:
-                espacamento(10)
-                slow_print("Você foi derrotado!", cor=c_obj.VERMELHO)
-                espacamento(10)
-                input("[continuar]")
 
             if inimigo_obj.vivo and player_obj.vivo and jogando:
                 player_obj.finalizar_turno()
