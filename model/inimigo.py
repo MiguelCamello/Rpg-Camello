@@ -51,7 +51,7 @@ class Inimigo:
     def morrer(self, atacante):
         self.mensagens.append(f"{c_obj.VERDE}{self.nome} foi morto por {atacante.nome}!{c_obj.RESET}")
 
-        atacante.ganhou_exp(self.exp_drop)
+        atacante.calculo_nivel(self.exp_drop)
 
         self.mensagens.append(f"{c_obj.VERDE}{atacante.nome} ganhou {self.exp_drop} de exp!{c_obj.RESET}")
 
@@ -65,11 +65,13 @@ class Inimigo:
             self.mana_maxima,
             self.mana + 50
         )
+        self.mensagens.append(f"Inimigo Descansou e recuperou {c_obj.AZUL}50{c_obj.RESET}")
 
     # estados
 
     def tomou_estado(self, estado):
         if estado in self.estados:
+            self.efeitos_ativos[estado] = self.efeitos_json[estado].get("duracao_turnos")
             return
         
         self.estados.append(estado)
@@ -99,10 +101,12 @@ class Inimigo:
                 if "defesa_por_turno" in efeito_dados:
                     self.modificadores["mod_defesa"] += efeito_dados["defesa_por_turno"]
 
-    def contabilizar_efeitos_continuos(self):
+    def contabilizar_efeitos_continuos(self, player):
         for efeito in list(self.efeitos_ativos):
             efeito_dados = self.efeitos_json[efeito]
             tipo = efeito_dados["tipo"]
+
+            estava_vivo = self.vivo
 
             if tipo in ["dano_continuo", "cura_continua"]:
                 vida = self.vida + efeito_dados["dano_por_turno"]
@@ -111,6 +115,9 @@ class Inimigo:
                 self.mensagens.append(f"O Inimigo recebeu {abs(efeito_dados["dano_por_turno"])} de dano devido ao efeito {efeito}")
             if tipo == "cura_continuo":
                 self.mensagens.append(f"O Inimigo recebeu {efeito_dados["dano_por_turno"]} de cura devido ao efeito {efeito}")
+
+            if not self.vivo and estava_vivo:
+                self.morrer(player)
 
     def contabilizar_defesa(self):
         self.defesa = self.defesa_base

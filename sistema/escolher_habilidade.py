@@ -50,10 +50,6 @@ def escolher_habilidade(player_obj):
 
             return habilidade
 
-        except ManaInsuficienteError:
-            espacamento(10)
-            slow_print(f"Mana insuficiente para usar a habilidade - {habilidade} - !", cor=c_obj.DOURADO)
-            time.sleep(2)
         except HabilidadeNaoAdquiridaError:
             espacamento(10)
             slow_print(f"Você não possui a habilidade - {habilidade} - !", cor=c_obj.DOURADO)

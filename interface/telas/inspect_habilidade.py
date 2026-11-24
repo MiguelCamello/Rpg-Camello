@@ -4,29 +4,29 @@ from interface.formatação import alinhar_para
 from model.cores import cores_obj as c_obj
 import textwrap
 
-espada = {
-    "l1": r"     /\    ",
-    "l2": r"    //\\    ",
-    "l3": r"   //  \\   ",
-    "l4": "   ||  ||   ",
-    "l5": "   ||  ||   ",
-    "l6": "   ||  ||   ",
-    "l7": "   ||  ||   ",
-    "l8": "   ||  ||   ",
-    "l9": "   ||  ||   ",
-    "l10": "   ||  ||   ",
-    "l11": "   ||  ||   ",
-    "l12": "   ||  ||   ",
-    "l13": "   ||  ||   ",
-    "l14": "   ||  ||   ",
-    "l15": "<====()====>",
-    "l16": r"    |/\|    ",
-    "l17": r"    |\/|    ",
-    "l18": r"    |/\|    ",
-    "l19": r"    |\/|    ",
-    "l20": r"    /  \    ",
-    "l21": r"    \__/    ",
-}
+espada = [
+    r"     /\    ",
+    r"    //\\    ",
+    r"   //  \\   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"   ||  ||   ",
+    r"<====()====>",
+    r"    |/\|    ",
+    r"    |\/|    ",
+    r"    |/\|    ",
+    r"    |\/|    ",
+    r"    /  \    ",
+    r"    \__/    ",
+]
 
 
 def tela_inspect_habilidade(habilidade_req):
@@ -66,27 +66,27 @@ def tela_inspect_habilidade(habilidade_req):
 {" "*10}{espaco}
 {" "*10}{espaco}
 {" "*10}{espaco}
-{" "*10}|{'== Tipos ==':>28}{cor}{espada['l1']:^16}{c_obj.RESET}{'== Custo ==':<28}|
-{" "*10}|{" "*28}{cor}{espada['l2']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{tipo1:>28}{cor}{espada['l3']:^16}{c_obj.RESET}{hab['custo_mana']:<28}|
-{" "*10}|{tipo2:>28}{cor}{espada['l4']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{" "*28}{cor}{espada['l5']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{'== Dano ==':>28}{cor}{espada['l6']:^16}{c_obj.RESET}{'== Cura ==':<28}|
-{" "*10}|{" "*28}{cor}{espada['l7']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{potencia:>28}{cor}{espada['l8']:^16}{c_obj.RESET}{cura:<28}|
-{" "*10}|{" "*28}{cor}{espada['l9']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{" "*28}{cor}{espada['l10']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{'== Penetração ==':>28}{cor}{espada['l11']:^16}{c_obj.RESET}{'== Ignorar Defesa ==':<28}|
-{" "*10}|{" "*28}{cor}{espada['l12']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{penetracao:>28}{cor}{espada['l13']:^16}{c_obj.RESET}{ignorar_defesa:<28}|
-{" "*10}|{" "*28}{cor}{espada['l14']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{" "*28}{c_obj.PRETO}{espada['l15']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{'== Efeitos ==':>28}{espada['l16']:^16}{c_obj.RESET}{'== Descrição ==':<28}|
-{" "*10}|{" "*28}{espada['l17']:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{alinhar_para(efeitos, 28, "direita")}{espada['l18']:^16}{c_obj.RESET}{linhas[0]:<28}|
-{" "*10}|{alvo:>28}{espada['l19']:^16}{c_obj.RESET}{linhas[1]:<28}|
-{" "*10}|{" "*28}{cor}{espada['l20']:^16}{c_obj.RESET}{linhas[2]:<28}|
-{" "*10}|{'== Alvos ==':>28}{cor}{espada['l21']:^16}{c_obj.RESET}{linhas[3]:<28}|
+{" "*10}|{'== Tipos ==':>28}{cor}{espada[0]:^16}{c_obj.RESET}{'== Custo ==':<28}|
+{" "*10}|{" "*28}{cor}{espada[1]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{tipo1:>28}{cor}{espada[2]:^16}{c_obj.RESET}{hab['custo_mana']:<28}|
+{" "*10}|{tipo2:>28}{cor}{espada[3]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{" "*28}{cor}{espada[4]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{'== Dano ==':>28}{cor}{espada[5]:^16}{c_obj.RESET}{'== Cura ==':<28}|
+{" "*10}|{" "*28}{cor}{espada[6]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{potencia:>28}{cor}{espada[7]:^16}{c_obj.RESET}{cura:<28}|
+{" "*10}|{" "*28}{cor}{espada[8]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{" "*28}{cor}{espada[9]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{'== Penetração ==':>28}{cor}{espada[10]:^16}{c_obj.RESET}{'== Ignorar Defesa ==':<28}|
+{" "*10}|{" "*28}{cor}{espada[11]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{str(penetracao) + "%":>28}{cor}{espada[12]:^16}{c_obj.RESET}{ignorar_defesa:<28}|
+{" "*10}|{" "*28}{cor}{espada[13]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{" "*28}{c_obj.PRETO}{espada[14]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{'== Efeitos ==':>28}{espada[15]:^16}{c_obj.RESET}{'== Descrição ==':<28}|
+{" "*10}|{" "*28}{espada[16]:^16}{c_obj.RESET}{" "*28}|
+{" "*10}|{alinhar_para(efeitos, 28, "direita")}{espada[17]:^16}{c_obj.RESET}{linhas[0]:<28}|
+{" "*10}|{alvo:>28}{espada[18]:^16}{c_obj.RESET}{linhas[1]:<28}|
+{" "*10}|{" "*28}{cor}{espada[19]:^16}{c_obj.RESET}{linhas[2]:<28}|
+{" "*10}|{'== Alvos ==':>28}{cor}{espada[20]:^16}{c_obj.RESET}{linhas[3]:<28}|
 {" "*10}{espaco}
 {" "*10}{espaco}
 {" "*10}{linha}

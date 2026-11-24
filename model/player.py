@@ -1,6 +1,4 @@
-from sistema.nova_habilidade import nova_habilidade
 from interface.formatação import slow_print
-from utils.sorteio import sortear_habilidades
 from utils.erros import *
 from model.cores import cores_obj as c_obj
 import random as rm
@@ -9,22 +7,22 @@ import time
 
 class Player:
     def __init__(self,
-                 efeitos_json,
-                 habilidades_json,
-                 nome,
-                 estados=[],
-                 nivel=1,
-                 exp_necessario=200,
-                 exp=0,
-                 mana_maxima=100,
-                 mana=100,
-                 vida_maxima=150,
-                 vida=150,
-                 defesa_base=10,
-                 defesa=10,
-                 itens={},
-                 habilidades=None
-                 ):
+                efeitos_json,
+                habilidades_json,
+                nome,
+                estados=[],
+                nivel=1,
+                exp_necessario=200,
+                exp=0,
+                mana_maxima=100,
+                mana=100,
+                vida_maxima=150,
+                vida=150,
+                defesa_base=10,
+                defesa=10,
+                itens={},
+                habilidades=None
+                ):
         self.efeitos_json = efeitos_json
         self.habilidades_json = habilidades_json
         self.nome = nome
@@ -62,7 +60,8 @@ class Player:
         else:
             self.habilidades = [hab.lower() for hab in habilidades]
 
-        self.proximo_nivel_hab = 2
+        self.proximo_nivel_hab = self.calculo_niveis_hab()
+        self.habilidades_pendentes = False
 
         self.mensagens = []
 
@@ -88,17 +87,20 @@ class Player:
 
     def tomou_estado(self, estado):
         if estado in self.estados:
+            self.efeitos_ativos[estado] = self.efeitos_json[estado].get(
+                "duracao_turnos")
+            # reseta a duração
             return
 
         self.estados.append(estado)
         self.efeitos_ativos[estado] = self.efeitos_json[estado].get(
             "duracao_turnos")
 
-        self.contabilizar_modificadores()
-        self.contabilizar_defesa()
-
         self.mensagens.append(
             f"{c_obj.DOURADO}Você recebeu o efeito - {estado} -")
+
+        self.contabilizar_modificadores()
+        self.contabilizar_defesa()
 
     def contabilizar_modificadores(self):
         self.modificadores = {
@@ -157,24 +159,12 @@ class Player:
 
     # level up
 
-    def calculo_habilidades(self):
-        NIVEIS_HABILIDADES = [2, 4, 6, 9, 12, 16, 20]
+    def calculo_niveis_hab(self):
+        niveis = [2, 3, 4, 6, 9, 12, 16, 20]
 
-        if self.nivel == self.proximo_nivel_hab:
-            hab_sorteadas = sortear_habilidades(
-                self, self.habilidades_json
-            )
-            nova_habilidade(self, hab_sorteadas)
+        proximos = [nivel for nivel in niveis if nivel > self.nivel]
 
-            proximos = [
-                valor for valor in NIVEIS_HABILIDADES
-                if valor > self.nivel
-            ]
-
-            proximo_multiplo = (self.nivel // 20 + 1) * 20
-            proximos.append(proximo_multiplo)
-
-            self.proximo_nivel_hab = min(proximos)
+        return min(proximos) if proximos else (self.nivel // 20 + 1) * 20
 
     def calculo_lvlUp(self):
         nivel = self.nivel - 1
@@ -190,18 +180,26 @@ class Player:
         self.vida = self.vida_maxima
         self.mana = self.mana_maxima
 
-
-    def ganhou_exp(self, exp):
+    def calculo_nivel(self, exp):
         if exp <= 0:
             print("Esse valor de exp é invalido!")
             return
         self.exp += exp
 
         while self.exp >= self.exp_necessario:
+
             self.exp -= self.exp_necessario
+
             self.nivel += 1
+
             self.mensagens.append(f"{c_obj.VERDE}{self.nome} subiu de nivel!")
+
             self.calculo_lvlUp()
+
+            if self.nivel == self.proximo_nivel_hab:
+                self.habilidades_pendentes = True
+
+                self.proximo_nivel_hab = self.calculo_niveis_hab()
 
     # itens
 
@@ -241,7 +239,8 @@ class Player:
         if habilidade_adquirida not in self.habilidades_json:
             raise HabilidadeInexistenteError
         if habilidade_adquirida in self.habilidades:
-            return print(f"{self.nome} Ganhou uma habilidade repetida!")
+            print(f"{self.nome} Ganhou uma habilidade repetida!")
+            return
 
         self.habilidades.append(habilidade_adquirida)
 

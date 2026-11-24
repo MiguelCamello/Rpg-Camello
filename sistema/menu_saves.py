@@ -21,7 +21,7 @@ def menu_saves():
         if acao == "voltar":
             return acao
 
-        elif acao in ["deletar_save","deletar_jogo", "deletar"]:
+        elif acao in ["deletar_save","deletar_jogo", "deletar", "delete"]:
 
             slow_print("Qual deseja deletar?: Save 1, Save 2, Save 3")
             delete = normalizar_texto(input(" > "))
@@ -62,7 +62,7 @@ def menu_saves():
             while True:
                 slow_print("Qual será o nome do seu personagem?")
     
-                nome_jogador = input(" > ").title().strip()
+                nome_jogador = input(" > ").strip().title()
 
                 nomes = [dado['nome'] for dado in saves]
 
@@ -86,7 +86,7 @@ def menu_saves():
 
             return player
 
-        elif acao in ["carregar_save", "carregar_jogo", "carregar"]:
+        elif acao in ["carregar_save", "carregar_jogo", "carregar", "carrega"]:
             slow_print("Qual deseja carregar?: Save 1, Save 2, Save 3")
             select = normalizar_texto(input(" > "))
             print()
