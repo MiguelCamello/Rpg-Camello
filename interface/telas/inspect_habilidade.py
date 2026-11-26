@@ -42,7 +42,10 @@ def tela_inspect_habilidade(habilidade_req):
 
     potencia = hab.get("potencia", "N/A")
     cura = hab.get("cura", "N/A")
+
     penetracao = hab.get("penetracao_defesa", "N/A")
+    penetracao = f"{penetracao}%" if penetracao != "N/A" else penetracao
+
     ignorar_defesa = "Sim" if hab.get("ignorar_defesa", False) else "Não"
 
     efeitos_list = [efeito["nome"] for efeito in hab.get("efeitos", [])]
@@ -78,7 +81,7 @@ def tela_inspect_habilidade(habilidade_req):
 {" "*10}|{" "*28}{cor}{espada[9]:^16}{c_obj.RESET}{" "*28}|
 {" "*10}|{'== Penetração ==':>28}{cor}{espada[10]:^16}{c_obj.RESET}{'== Ignorar Defesa ==':<28}|
 {" "*10}|{" "*28}{cor}{espada[11]:^16}{c_obj.RESET}{" "*28}|
-{" "*10}|{str(penetracao) + "%":>28}{cor}{espada[12]:^16}{c_obj.RESET}{ignorar_defesa:<28}|
+{" "*10}|{penetracao:>28}{cor}{espada[12]:^16}{c_obj.RESET}{ignorar_defesa:<28}|
 {" "*10}|{" "*28}{cor}{espada[13]:^16}{c_obj.RESET}{" "*28}|
 {" "*10}|{" "*28}{c_obj.PRETO}{espada[14]:^16}{c_obj.RESET}{" "*28}|
 {" "*10}|{'== Efeitos ==':>28}{espada[15]:^16}{c_obj.RESET}{'== Descrição ==':<28}|

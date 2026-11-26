@@ -84,5 +84,3 @@ def tela_nova_habilidade(lista_habilidades):
 {espaco}
 {linha}
 """)
-
-tela_nova_habilidade(("estocada", "ira_do_dragao_primordial", "soco_pesado"))

@@ -1,4 +1,3 @@
-
 {
     "goblin": {
         "sprite": "goblin",
@@ -25,8 +24,8 @@
         "defesa": 12,
         "vida": 100,
         "habilidades_possiveis": [
-            "flechada",
-            "soco_médio"
+            "flecha_perfurante",
+            "soco_medio"
         ],
         "exp_drop": 75,
         "drops": {
@@ -114,9 +113,9 @@
         "defesa": 25,
         "vida": 145,
         "habilidades_possiveis": [
-            "corte_raso",
-            "golpe_pesado",
-            "estocada"
+            "estocada",
+            "soco_pesado",
+            "golpe_brutal"
         ],
         "exp_drop": 150,
         "drops": {
@@ -344,6 +343,98 @@
             "escama_de_dragao": 80,
             "presa_de_dragao": 60,
             "coracao_de_dragao": 10
+        }
+    },
+    "bandido": {
+        "sprite": "goblin",
+        "nome": "Bandido",
+        "dificuldade": "Fácil",
+        "mana": 45,
+        "defesa": 4,
+        "vida": 95,
+        "habilidades_possiveis": [
+            "golpe_duplo",
+            "estocada",
+            "disparo_preciso"
+        ],
+        "exp_drop": 60,
+        "drops": {
+            "faca": 20,
+            "colar": 15
+        }
+    },
+    "aranha_venenosa": {
+        "sprite": "aranha",
+        "nome": "Aranha venenosa",
+        "dificuldade": "Médio",
+        "mana": 65,
+        "defesa": 5,
+        "vida": 115,
+        "habilidades_possiveis": [
+            "mordida",
+            "golpe_podre",
+            "corte_sangrento"
+        ],
+        "exp_drop": 105,
+        "drops": {
+            "veneno_de_aranha": 35,
+            "seda_de_aranha": 50
+        }
+    },
+    "guardiao_arcano": {
+        "sprite": "caixa",
+        "nome": "Guardião arcano",
+        "dificuldade": "Difícil",
+        "mana": 125,
+        "defesa": 22,
+        "vida": 185,
+        "habilidades_possiveis": [
+            "barreira_arcana",
+            "explosao_arcana",
+            "raio_arcano"
+        ],
+        "exp_drop": 190,
+        "drops": {
+            "cristal_magico": 35,
+            "fragmento_de_pedra": 20
+        }
+    },
+    "cavaleiro_real": {
+        "sprite": "esqueleto",
+        "nome": "Cavaleiro real",
+        "dificuldade": "Muito difícil",
+        "mana": 110,
+        "defesa": 32,
+        "vida": 285,
+        "habilidades_possiveis": [
+            "postura_defensiva",
+            "golpe_quebra_armadura",
+            "chuva_de_flechas"
+        ],
+        "exp_drop": 330,
+        "drops": {
+            "espada_de_ferro": 35,
+            "capacete_de_ferro": 30,
+            "colar": 20
+        }
+    },
+    "serpente_ancestral": {
+        "sprite": "dragao",
+        "nome": "Serpente ancestral",
+        "dificuldade": "Chefe",
+        "mana": 190,
+        "defesa": 24,
+        "vida": 480,
+        "habilidades_possiveis": [
+            "corte_sangrento",
+            "furia_elemental",
+            "julgamento_estelar"
+        ],
+        "exp_drop": 650,
+        "drops": {
+            "escama_de_dragao": 65,
+            "presa_de_dragao": 50,
+            "essencia_elemental": 25
         }
     }
 }

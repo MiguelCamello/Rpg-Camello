@@ -1,80 +1,81 @@
 {
-  "vivo": {
-    "nome": "Vivo",
-    "tipo": "estado",
-    "descricao": "A entidade esta viva."
-  },
-  "morto": {
-    "nome": "Morto",
-    "tipo": "estado",
-    "descricao": "A entidade morreu e nao pode agir."
-  },
-  "morto_vivo": {
-    "nome": "Morto-vivo",
-    "tipo": "estado",
-    "descricao": "A entidade pertence a categoria dos mortos-vivos."
-  },
-  "atordoado": {
-    "cor": "\u001b[30m",
-    "nome": "Atordoado",
-    "tipo": "controle",
-    "duracao_turnos": 1,
-    "descricao": "A entidade perde sua proxima acao."
-  },
-  "envenenado": {
-    "cor": "\u001b[34m",
-    "nome": "Envenenado",
-    "tipo": "dano_continuo",
-    "duracao_turnos": 3,
-    "dano_por_turno": -5,
-    "descricao": "A entidade perde vida ao longo dos turnos."
-  },
-  "queimando": {
-    "cor": "\u001b[33m",
-    "nome": "Queimando",
-    "tipo": "dano_continuo",
-    "duracao_turnos": 3,
-    "dano_por_turno": -8,
-    "descricao": "A entidade sofre dano de fogo ao longo dos turnos."
-  },
-  "regeneracao": {
-    "cor": "\u001b[92m",
-    "nome": "Regeneracao",
-    "tipo": "cura_continua",
-    "duracao_turnos": 3,
-    "cura_por_turno": 5,
-    "descricao": "A entidade recupera vida ao longo dos turnos."
-  },
-  "enfraquecido": {
-    "cor": "\u001b[30m",
-    "nome": "Enfraquecido",
-    "tipo": "debuff",
-    "duracao_turnos": 2,
-    "modificador_dano": -25,
-    "descricao": "A entidade causa menos dano."
-  },
-  "exposto": {
-    "cor": "\u001b[30m",
-    "nome": "Exposto",
-    "tipo": "debuff",
-    "duracao_turnos": 2,
-    "defesa_por_turno": -20,
-    "descricao": "A entidade perde defesa temporariamente."
-  },
-  "fortalecido": {
-    "cor": "\u001b[33m",
-    "nome": "Fortalecido",
-    "tipo": "buff",
-    "duracao_turnos": 3,
-    "modificador_dano": 25,
-    "descricao": "A entidade causa mais dano."
-  },
-  "escudo": {
-    "cor": "\u001b[33m",
-    "nome": "Escudo",
-    "tipo": "buff",
-    "duracao_turnos": 2,
-    "defesa_por_turno": 20,
-    "descricao": "A entidade ganha um escudo temporário."
-  }
+    "atordoado": {
+        "cor": "\u001b[30m",
+        "nome": "Atordoado",
+        "tipo": "controle",
+        "duracao_turnos": 1,
+        "descricao": "A entidade perde sua proxima acao."
+    },
+    "envenenado": {
+        "cor": "\u001b[34m",
+        "nome": "Envenenado",
+        "tipo": "dano_continuo",
+        "duracao_turnos": 3,
+        "dano_por_turno": -5,
+        "descricao": "A entidade perde vida ao longo dos turnos."
+    },
+    "queimando": {
+        "cor": "\u001b[33m",
+        "nome": "Queimando",
+        "tipo": "dano_continuo",
+        "duracao_turnos": 3,
+        "dano_por_turno": -8,
+        "descricao": "A entidade sofre dano de fogo ao longo dos turnos."
+    },
+    "regeneracao": {
+        "cor": "\u001b[92m",
+        "nome": "Regeneracao",
+        "tipo": "cura_continua",
+        "duracao_turnos": 3,
+        "cura_por_turno": 5,
+        "descricao": "A entidade recupera vida ao longo dos turnos."
+    },
+    "enfraquecido": {
+        "cor": "\u001b[30m",
+        "nome": "Enfraquecido",
+        "tipo": "debuff",
+        "duracao_turnos": 2,
+        "modificador_dano": -25,
+        "descricao": "A entidade causa menos dano."
+    },
+    "exposto": {
+        "cor": "\u001b[30m",
+        "nome": "Exposto",
+        "tipo": "debuff",
+        "duracao_turnos": 2,
+        "defesa_por_turno": -20,
+        "descricao": "A entidade perde defesa temporariamente."
+    },
+    "fortalecido": {
+        "cor": "\u001b[33m",
+        "nome": "Fortalecido",
+        "tipo": "buff",
+        "duracao_turnos": 3,
+        "modificador_dano": 25,
+        "descricao": "A entidade causa mais dano."
+    },
+    "escudo": {
+        "cor": "\u001b[33m",
+        "nome": "Escudo",
+        "tipo": "buff",
+        "duracao_turnos": 2,
+        "defesa_por_turno": 20,
+        "descricao": "A entidade ganha um escudo temporario."
+    },
+    "sangrando": {
+        "cor": "\u001b[31m",
+        "nome": "Sangrando",
+        "tipo": "dano_continuo",
+        "duracao_turnos": 2,
+        "dano_por_turno": -6,
+        "descricao": "A entidade perde vida gradualmente devido ao ferimento."
+    },
+    "protegido": {
+        "cor": "\u001b[36m",
+        "nome": "Protegido",
+        "tipo": "buff",
+        "duracao_turnos": 2,
+        "defesa_por_turno": 15,
+        "descricao": "A entidade recebe protecao temporaria."
+    }
 }
